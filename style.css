@@ -581,6 +581,129 @@ body {
     transform: scale(1.1);
 }
 
+/* ============================================
+   MOBILE RESPONSIVE STYLES - ENHANCED
+   ============================================ */
+
+/* --- Custom Select Dropdown Styling --- */
+.modal-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300f3ff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 12px;
+    padding-right: 50px;
+    cursor: pointer;
+}
+
+.modal-form select option {
+    background: #020c1b;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Enhanced form field styling */
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+    min-height: 50px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form input:hover,
+.modal-form select:hover,
+.modal-form textarea:hover {
+    border-color: rgba(0, 243, 255, 0.4);
+}
+
+.modal-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Better button styling in forms */
+.modal-form button {
+    min-height: 54px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form button:active {
+    transform: scale(0.98);
+}
+
+/* --- Tablet Breakpoint (768px) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        top: 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .feature-card {
+        padding: 40px 25px;
+    }
+
+    .tech-section {
+        gap: 40px;
+    }
+
+    .glass-interface {
+        padding: 15px;
+    }
+
+    .interface-body {
+        height: 250px;
+    }
+
+    .safety-card {
+        padding: 60px 40px;
+    }
+
+    .safety-card h2 {
+        font-size: 2rem;
+    }
+
+    .cta-container {
+        padding: 60px 40px;
+    }
+
+    .phone-display {
+        font-size: 2.5rem;
+    }
+
+    /* Modal improvements for tablet */
+    .modal-content {
+        padding: 40px 30px;
+        max-width: 90%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* --- Mobile Breakpoint (900px and below) --- */
 @media (max-width: 900px) {
     .desktop-only {
         display: none;
@@ -590,41 +713,430 @@ body {
         display: flex;
     }
 
+    .page-wrapper {
+        padding: 0 15px;
+    }
+
+    /* Hero Section Mobile Optimization */
     .hero-section {
-        flex-direction: column;
+        min-height: auto;
+        padding: 120px 5% 60px;
         text-align: center;
-        justify-content: center;
-        padding-top: 100px;
     }
 
     .hero-content {
-        padding-right: 0;
-        margin-bottom: 60px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+        margin-bottom: 15px;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
     }
 
     .hero-subtitle {
-        margin: 0 auto 40px;
+        font-size: 1rem;
+        margin: 0 auto 30px;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        padding: 16px 35px;
+        font-size: 0.95rem;
     }
 
     .hero-stats {
         position: relative;
         bottom: auto;
         right: auto;
-        justify-content: center;
-        margin-top: 40px;
+        margin-top: 50px;
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px 30px;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
+    .stat-num {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Trust Bar Mobile */
+    .trust-bar {
+        flex-wrap: wrap;
+        padding: 30px 5%;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .trust-item {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    /* Sections Mobile */
+    .section {
+        padding: 80px 5%;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .section-desc {
+        font-size: 1rem;
+    }
+
+    /* Tech Section Mobile */
     .tech-section {
         flex-direction: column;
         gap: 40px;
     }
 
+    .tech-content,
+    .tech-visual {
+        flex: none;
+        width: 100%;
+    }
+
+    .tech-list {
+        margin: 20px 0;
+    }
+
+    .tech-item {
+        font-size: 1rem;
+    }
+
+    /* Safety Section Mobile */
+    .safety-card {
+        padding: 50px 30px;
+    }
+
+    .safety-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .safety-card p {
+        font-size: 1rem;
+    }
+
+    .safety-badges {
+        gap: 15px;
+    }
+
+    .safety-badge-item {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* CTA Section Mobile */
+    .cta-container {
+        padding: 50px 30px;
+    }
+
+    .cta-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .phone-display {
+        font-size: 2.2rem;
+        margin: 30px 0;
+    }
+
+    .neon-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .neon-input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 16px 25px;
+        height: 54px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        height: 54px;
+        font-size: 1rem;
+    }
+
+    /* Footer Mobile */
+    .main-footer {
+        padding: 60px 5% 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    /* Modal Mobile Optimization */
+    .modal-content {
+        padding: 35px 25px;
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .modal-form {
+        gap: 15px;
+    }
+
+    .modal-form input,
+    .modal-form select,
+    .modal-form textarea {
+        padding: 14px 18px;
+        font-size: 1rem;
+        min-height: 50px;
+    }
+
+    .modal-form button {
+        padding: 16px 35px;
+        font-size: 1rem;
+        min-height: 52px;
+    }
+}
+
+/* --- Small Mobile Breakpoint (480px and below) --- */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .lang-btn {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    /* Hero Section - Extra Small Screens */
+    .hero-section {
+        padding: 100px 5% 50px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+    }
+
+    .hero-stats {
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .stat-num {
+        font-size: 2rem;
+    }
+
+    /* Trust Bar - Extra Small */
+    .trust-item {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    /* Sections - Extra Small */
     .section {
-        padding: 100px 5%;
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
+    }
+
+    /* Feature Cards - Extra Small */
+    .feature-card {
+        padding: 35px 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature-card p {
+        font-size: 0.95rem;
+    }
+
+    /* Tech Section - Extra Small */
+    .glass-interface {
+        padding: 12px;
+    }
+
+    .interface-body {
+        padding: 15px;
+        height: 200px;
+    }
+
+    .hud-grid {
+        gap: 10px;
+    }
+
+    .hud-label {
+        font-size: 0.65rem;
+    }
+
+    .hud-value {
+        font-size: 1rem;
+    }
+
+    /* Safety Card - Extra Small */
+    .safety-card {
+        padding: 40px 20px;
+    }
+
+    .safety-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .safety-card p {
+        font-size: 0.95rem;
+    }
+
+    .safety-badges {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .safety-badge-item {
+        justify-content: center;
+    }
+
+    /* CTA Section - Extra Small */
+    .cta-container {
+        padding: 40px 20px;
+    }
+
+    .cta-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-container p {
+        font-size: 0.95rem;
+    }
+
+    .phone-display {
+        font-size: 1.8rem;
+        margin: 25px 0;
+    }
+
+    /* Modal - Extra Small */
+    .modal-content {
+        padding: 30px 20px;
+        width: 96%;
+        border-radius: 15px;
+    }
+
+    .modal-close {
+        top: 12px;
+        right: 12px;
+        font-size: 1.8rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .modal-form {
+        gap: 12px;
+    }
+
+    .modal-form input,
+    .modal-form select,
+    .modal-form textarea {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        min-height: 48px;
+    }
+
+    .modal-form select {
+        background-position: right 15px center;
+        padding-right: 40px;
+    }
+
+    .modal-form button {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+        min-height: 48px;
+    }
+
+    .tech-features-list li {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    /* Footer - Extra Small */
+    .main-footer {
+        padding: 50px 5% 25px;
+    }
+
+    .footer-col h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 0.9rem;
     }
 }
 
