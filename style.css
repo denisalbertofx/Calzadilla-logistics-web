@@ -720,7 +720,7 @@ body {
     /* Hero Section Mobile Optimization */
     .hero-section {
         min-height: auto;
-        padding: 120px 5% 60px;
+        padding: 100px 5% 50px;
         text-align: center;
     }
 
@@ -736,7 +736,8 @@ body {
     }
 
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
+        line-height: 1.2;
         margin-bottom: 20px;
         letter-spacing: -1px;
     }
@@ -786,10 +787,12 @@ body {
 
     /* Trust Bar Mobile */
     .trust-bar {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         padding: 30px 5%;
         gap: 20px;
-        justify-content: center;
+        justify-items: center;
+        text-align: center;
     }
 
     .trust-item {
@@ -799,7 +802,11 @@ body {
 
     /* Sections Mobile */
     .section {
-        padding: 60px 5%;
+        padding: 40px 5%;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
     }
 }
 
@@ -1034,7 +1041,7 @@ html {
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .hero-subtitle {
@@ -1064,7 +1071,7 @@ html {
 
     /* Sections - Extra Small */
     .section {
-        padding: 60px 5%;
+        padding: 40px 5%;
     }
 
     .section-title {
@@ -1676,8 +1683,7 @@ html {
 
 /* --- Sections General --- */
 .section {
-    padding: 150px 10%;
-    /* Increased spacing */
+    padding: 120px 10%;
     position: relative;
     z-index: 10;
 }
