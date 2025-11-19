@@ -310,18 +310,46 @@
 
     <!-- Tech Demo Modal -->
     <div class="modal-overlay" id="tech-modal">
-        <div class="modal-content">
+        <div class="modal-content large-modal">
             <button class="modal-close">&times;</button>
             <h2 data-i18n="modal.tech.title">Our Technology Platform</h2>
-            <div class="tech-modal-content">
-                <ul class="tech-features-list">
-                    <li data-i18n="modal.tech.feature1">✓ Real-time GPS tracking on all shipments</li>
-                    <li data-i18n="modal.tech.feature2">✓ Automated ETA updates via SMS/Email</li>
-                    <li data-i18n="modal.tech.feature3">✓ Digital proof of delivery with photos</li>
-                    <li data-i18n="modal.tech.feature4">✓ EDI & API integration available</li>
-                    <li data-i18n="modal.tech.feature5">✓ Custom reporting and analytics</li>
-                </ul>
-                <button class="cta-button" data-modal="quote" data-i18n="modal.tech.cta">Schedule a Demo</button>
+            <div class="tech-modal-grid">
+                <div class="tech-demo-visual">
+                    <div class="demo-screen">
+                        <div class="demo-header">
+                            <span>LIVE_FLEET_VIEW.exe</span>
+                            <span class="blink">● LIVE</span>
+                        </div>
+                        <div class="demo-map-grid">
+                            <!-- Simulated Map Points -->
+                            <div class="map-point p1"></div>
+                            <div class="map-point p2"></div>
+                            <div class="map-point p3"></div>
+                            <div class="radar-sweep"></div>
+                        </div>
+                        <div class="demo-stats-row">
+                            <div class="demo-stat">
+                                <span class="label">ACTIVE UNITS</span>
+                                <span class="value" data-animate-value="42">0</span>
+                            </div>
+                            <div class="demo-stat">
+                                <span class="label">ON TIME %</span>
+                                <span class="value" data-animate-value="99.8">0</span>%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-features-content">
+                    <h3 data-i18n="modal.tech.subtitle">Complete Visibility</h3>
+                    <ul class="tech-features-list">
+                        <li data-i18n="modal.tech.feature1">✓ Real-time GPS tracking on all shipments</li>
+                        <li data-i18n="modal.tech.feature2">✓ Automated ETA updates via SMS/Email</li>
+                        <li data-i18n="modal.tech.feature3">✓ Digital proof of delivery with photos</li>
+                        <li data-i18n="modal.tech.feature4">✓ EDI & API integration available</li>
+                        <li data-i18n="modal.tech.feature5">✓ Custom reporting and analytics</li>
+                    </ul>
+                    <button class="cta-button" data-modal="quote" data-i18n="modal.tech.cta">Schedule a Demo</button>
+                </div>
             </div>
         </div>
     </div>
@@ -332,6 +360,7 @@
     <script type="module" src="webgl_scene.js"></script>
     <script src="mobile_menu.js"></script>
     <script src="interactions.js"></script>
+    <script src="animations.js"></script>
 </body>
 
 </html>

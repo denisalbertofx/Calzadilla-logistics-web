@@ -49,33 +49,83 @@ function handleQuoteSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
+    const inputs = form.querySelectorAll('input, select, textarea');
+    let isValid = true;
+
+    // Basic Validation
+    inputs.forEach(input => {
+        if (input.hasAttribute('required') && !input.value.trim()) {
+            isValid = false;
+            input.style.borderColor = '#ff4444';
+        } else {
+            input.style.borderColor = '';
+        }
+    });
+
+    if (!isValid) return;
+
+    // Loading State
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = currentLang() === 'es' ? 'Enviando...' : 'Sending...';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
 
     // Simulate submission
-    submitBtn.textContent = currentLang() === 'es' ? '¡Enviado!' : 'Sent!';
-    submitBtn.style.background = '#27c93f';
-
     setTimeout(() => {
-        closeAllModals();
-        form.reset();
-        submitBtn.textContent = translations[currentLang()]['modal.quote.submit'];
-        submitBtn.style.background = '';
-    }, 2000);
+        submitBtn.textContent = currentLang() === 'es' ? '¡Enviado!' : 'Sent!';
+        submitBtn.style.background = '#27c93f';
+        submitBtn.style.borderColor = '#27c93f';
+        submitBtn.style.opacity = '1';
+
+        setTimeout(() => {
+            closeAllModals();
+            form.reset();
+            submitBtn.textContent = originalText; // Reset text using original
+            submitBtn.style.background = '';
+            submitBtn.style.borderColor = '';
+            submitBtn.disabled = false;
+        }, 1500);
+    }, 1500);
 }
 
 function handleCarrierSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
+    const inputs = form.querySelectorAll('input');
+    let isValid = true;
 
-    submitBtn.textContent = currentLang() === 'es' ? '¡Enviado!' : 'Sent!';
-    submitBtn.style.background = '#27c93f';
+    inputs.forEach(input => {
+        if (input.hasAttribute('required') && !input.value.trim()) {
+            isValid = false;
+            input.style.borderColor = '#ff4444';
+        } else {
+            input.style.borderColor = '';
+        }
+    });
+
+    if (!isValid) return;
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = currentLang() === 'es' ? 'Enviando...' : 'Sending...';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
 
     setTimeout(() => {
-        closeAllModals();
-        form.reset();
-        submitBtn.textContent = translations[currentLang()]['modal.carrier.submit'];
-        submitBtn.style.background = '';
-    }, 2000);
+        submitBtn.textContent = currentLang() === 'es' ? '¡Enviado!' : 'Sent!';
+        submitBtn.style.background = '#27c93f';
+        submitBtn.style.borderColor = '#27c93f';
+        submitBtn.style.opacity = '1';
+
+        setTimeout(() => {
+            closeAllModals();
+            form.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+            submitBtn.style.borderColor = '';
+            submitBtn.disabled = false;
+        }, 1500);
+    }, 1500);
 }
 
 // ESC key to close

@@ -44,7 +44,9 @@ antigravity/
 
 ## Deployment
 
-Deployed on Vercel: [Your URL Here]
+**Live Site:** [https://antigravity-pi.vercel.app](https://antigravity-pi.vercel.app)
+
+Deployed on Vercel with automatic deployments from the `main` branch.
 
 ## Contact
 

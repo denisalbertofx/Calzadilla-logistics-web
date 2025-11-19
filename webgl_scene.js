@@ -205,13 +205,61 @@ window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
 });
 
+// --- INTERACTION ---
+let targetRotationY = 0;
+let isDragging = false;
+let previousMouseX = 0;
+let rotationVelocity = 0;
+
+// Mouse/Touch Events
+canvas.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    previousMouseX = e.clientX;
+});
+
+canvas.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    previousMouseX = e.touches[0].clientX;
+}, { passive: false });
+
+window.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        const delta = e.clientX - previousMouseX;
+        rotationVelocity = delta * 0.005;
+        previousMouseX = e.clientX;
+    }
+});
+
+window.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+        const delta = e.touches[0].clientX - previousMouseX;
+        rotationVelocity = delta * 0.005;
+        previousMouseX = e.touches[0].clientX;
+        e.preventDefault(); // Prevent scrolling while dragging globe
+    }
+}, { passive: false });
+
+window.addEventListener('mouseup', () => isDragging = false);
+window.addEventListener('touchend', () => isDragging = false);
+
 const clock = new THREE.Clock();
 
 function animate() {
     const elapsedTime = clock.getElapsedTime();
 
-    // Globe rotation (faster)
-    globeGroup.rotation.y = elapsedTime * 0.1 + (scrollY * 0.0008);
+    // Globe rotation logic
+    if (!isDragging) {
+        // Auto-rotation + Scroll influence + Inertia
+        rotationVelocity *= 0.95; // Damping
+        if (Math.abs(rotationVelocity) < 0.0001) rotationVelocity = 0;
+
+        // Base auto-rotation
+        const autoRotation = 0.001;
+        globeGroup.rotation.y += autoRotation + rotationVelocity + (scrollY * 0.0008);
+    } else {
+        // Manual rotation
+        globeGroup.rotation.y += rotationVelocity;
+    }
 
     // Camera scrollytelling (smoother and more responsive)
     const targetZ = 18 - (scrollY * 0.008);
