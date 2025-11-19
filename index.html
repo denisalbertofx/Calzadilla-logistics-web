@@ -6,14 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Calzadilla Logistics LLC - Miami's premier global freight solutions partner. Full Truckload, LTL, and Expedited services with real-time tracking.">
+    <meta name="keywords"
+        content="logistics, freight, shipping, miami, trucking, LTL, FTL, expedited, supply chain, 3D tracking">
+    <meta name="author" content="Calzadilla Logistics LLC">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calzadillalogistics.com/">
     <meta property="og:title" content="Calzadilla Logistics LLC | Global Freight Solutions">
     <meta property="og:description" content="Experience the future of logistics. Precision, Speed, and Global Reach.">
-    <meta property="og:image" content="https://calzadillalogistics.com/og-image.jpg"> <!-- Placeholder -->
-    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calzadillalogistics.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calzadillalogistics.com/">
+    <meta property="twitter:title" content="Calzadilla Logistics LLC | Global Freight Solutions">
+    <meta property="twitter:description"
+        content="Experience the future of logistics. Precision, Speed, and Global Reach.">
+    <meta property="twitter:image" content="https://calzadillalogistics.com/og-image.jpg">
+
     <title>Calzadilla Logistics LLC | Global Freight Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap"
+        as="style">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <script type="importmap">
         {
@@ -27,7 +45,7 @@
 
 <body>
     <!-- Loading Screen -->
-    <div id="loading-screen">
+    <div id="loading-screen" role="status" aria-label="Loading application">
         <div class="loader-content">
             <div class="loader-logo">CALZADILLA</div>
             <div class="loader-bar">
@@ -37,11 +55,11 @@
         </div>
     </div>
 
-    <canvas id="webgl-canvas"></canvas>
+    <canvas id="webgl-canvas" aria-hidden="true"></canvas>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobile-menu">
-        <button class="close-menu-btn" id="close-menu">&times;</button>
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+        <button class="close-menu-btn" id="close-menu" aria-label="Close menu">&times;</button>
         <div class="mobile-nav-links">
             <a href="#hero" class="mobile-link">Home</a>
             <a href="#services" class="mobile-link">Services</a>
@@ -52,7 +70,7 @@
     </div>
 
     <div class="page-wrapper">
-        <nav class="navbar">
+        <nav class="navbar" role="navigation">
             <div class="logo">CALZADILLA <span class="highlight-text">LOGISTICS</span></div>
             <div class="nav-links desktop-only">
                 <a href="#services" data-i18n="nav.services">Services</a>
@@ -61,16 +79,16 @@
                 <a href="#contact" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="contact-info desktop-only">
-                <a href="tel:7867934828" class="nav-phone">📞 (786) 793-4828</a>
+                <a href="tel:7867934828" class="nav-phone" aria-label="Call us">📞 (786) 793-4828</a>
             </div>
             <!-- Language Switcher -->
             <div class="lang-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
                 <span class="lang-divider">|</span>
-                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="es" aria-label="Switch to Spanish">ES</button>
             </div>
             <!-- Hamburger Button -->
-            <button class="hamburger-btn" id="hamburger-btn">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -126,7 +144,7 @@
                     <div class="feature-icon">
                         <!-- Neon Truck SVG -->
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <rect x="1" y="3" width="15" height="13"></rect>
                             <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
                             <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -140,7 +158,7 @@
                     <div class="feature-icon">
                         <!-- Neon Box SVG -->
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path
                                 d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
                             </path>
@@ -155,7 +173,7 @@
                     <div class="feature-icon">
                         <!-- Neon Lightning SVG -->
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                     </div>
@@ -243,7 +261,7 @@
                 <p>Miami's most trusted logistics partner.</p>
                 <h3 class="phone-display">786 793 4828</h3>
                 <form class="neon-form">
-                    <input type="email" placeholder="Enter your email" class="neon-input">
+                    <input type="email" placeholder="Enter your email" class="neon-input" aria-label="Email address">
                     <button type="submit" class="cta-button submit-btn">Get Started</button>
                 </form>
             </div>
@@ -269,49 +287,59 @@
 
     <!-- MODALS -->
     <!-- Quote Modal -->
-    <div class="modal-overlay" id="quote-modal">
+    <div class="modal-overlay" id="quote-modal" aria-hidden="true">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 data-i18n="modal.quote.title">Request a Quote</h2>
             <form id="quote-form" class="modal-form">
-                <input type="text" placeholder="Full Name" data-i18n="modal.quote.name" required>
-                <input type="email" placeholder="Email Address" data-i18n="modal.quote.email" required>
-                <input type="tel" placeholder="Phone Number" data-i18n="modal.quote.phone" required>
-                <select required>
+                <input type="text" placeholder="Full Name" data-i18n="modal.quote.name" required aria-label="Full Name">
+                <input type="email" placeholder="Email Address" data-i18n="modal.quote.email" required
+                    aria-label="Email Address">
+                <input type="tel" placeholder="Phone Number" data-i18n="modal.quote.phone" required
+                    aria-label="Phone Number">
+                <select required aria-label="Service Type">
                     <option value="">Service Type</option>
                     <option value="ftl">Full Truckload</option>
                     <option value="ltl">LTL</option>
                     <option value="exp">Expedited</option>
                 </select>
-                <input type="text" placeholder="Origin City" data-i18n="modal.quote.origin" required>
-                <input type="text" placeholder="Destination City" data-i18n="modal.quote.destination" required>
-                <textarea placeholder="Shipment Details" data-i18n="modal.quote.details" rows="4"></textarea>
+                <input type="text" placeholder="Origin City" data-i18n="modal.quote.origin" required
+                    aria-label="Origin City">
+                <input type="text" placeholder="Destination City" data-i18n="modal.quote.destination" required
+                    aria-label="Destination City">
+                <textarea placeholder="Shipment Details" data-i18n="modal.quote.details" rows="4"
+                    aria-label="Shipment Details"></textarea>
                 <button type="submit" class="cta-button" data-i18n="modal.quote.submit">Submit Quote Request</button>
             </form>
         </div>
     </div>
 
     <!-- Carrier Modal -->
-    <div class="modal-overlay" id="carrier-modal">
+    <div class="modal-overlay" id="carrier-modal" aria-hidden="true">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 data-i18n="modal.carrier.title">Carrier Setup</h2>
             <form id="carrier-form" class="modal-form">
-                <input type="text" placeholder="Company Name" data-i18n="modal.carrier.company" required>
-                <input type="text" placeholder="MC Number" data-i18n="modal.carrier.mc" required>
-                <input type="text" placeholder="DOT Number" data-i18n="modal.carrier.dot" required>
-                <input type="email" placeholder="Contact Email" data-i18n="modal.carrier.email" required>
-                <input type="tel" placeholder="Phone Number" data-i18n="modal.carrier.phone" required>
-                <input type="number" placeholder="Fleet Size" data-i18n="modal.carrier.fleet" required>
+                <input type="text" placeholder="Company Name" data-i18n="modal.carrier.company" required
+                    aria-label="Company Name">
+                <input type="text" placeholder="MC Number" data-i18n="modal.carrier.mc" required aria-label="MC Number">
+                <input type="text" placeholder="DOT Number" data-i18n="modal.carrier.dot" required
+                    aria-label="DOT Number">
+                <input type="email" placeholder="Contact Email" data-i18n="modal.carrier.email" required
+                    aria-label="Contact Email">
+                <input type="tel" placeholder="Phone Number" data-i18n="modal.carrier.phone" required
+                    aria-label="Phone Number">
+                <input type="number" placeholder="Fleet Size" data-i18n="modal.carrier.fleet" required
+                    aria-label="Fleet Size">
                 <button type="submit" class="cta-button" data-i18n="modal.carrier.submit">Apply as Carrier</button>
             </form>
         </div>
     </div>
 
     <!-- Tech Demo Modal -->
-    <div class="modal-overlay" id="tech-modal">
+    <div class="modal-overlay" id="tech-modal" aria-hidden="true">
         <div class="modal-content large-modal">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 data-i18n="modal.tech.title">Our Technology Platform</h2>
             <div class="tech-modal-grid">
                 <div class="tech-demo-visual">
@@ -354,13 +382,13 @@
         </div>
     </div>
 
-    <script src="translations.js"></script>
-    <script src="language.js"></script>
-    <script src="modals.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="language.js" defer></script>
+    <script src="modals.js" defer></script>
     <script type="module" src="webgl_scene.js"></script>
-    <script src="mobile_menu.js"></script>
-    <script src="interactions.js"></script>
-    <script src="animations.js"></script>
+    <script src="mobile_menu.js" defer></script>
+    <script src="interactions.js" defer></script>
+    <script src="animations.js" defer></script>
 </body>
 
 </html>
