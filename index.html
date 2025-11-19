@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calzadilla Logistics LLC - Miami's premier global freight solutions partner. Full Truckload, LTL, and Expedited services with real-time tracking.">
+    <meta property="og:title" content="Calzadilla Logistics LLC | Global Freight Solutions">
+    <meta property="og:description" content="Experience the future of logistics. Precision, Speed, and Global Reach.">
+    <meta property="og:image" content="https://calzadillalogistics.com/og-image.jpg"> <!-- Placeholder -->
+    <meta property="og:type" content="website">
+    <title>Calzadilla Logistics LLC | Global Freight Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">CALZADILLA</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <div class="loader-text">INITIALIZING SYSTEMS...</div>
+        </div>
+    </div>
+
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <button class="close-menu-btn" id="close-menu">&times;</button>
+        <div class="mobile-nav-links">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#tech" class="mobile-link">Technology</a>
+            <a href="#safety" class="mobile-link">Safety</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <nav class="navbar">
+            <div class="logo">CALZADILLA <span class="highlight-text">LOGISTICS</span></div>
+            <div class="nav-links desktop-only">
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#tech" data-i18n="nav.technology">Technology</a>
+                <a href="#safety" data-i18n="nav.safety">Safety</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="contact-info desktop-only">
+                <a href="tel:7867934828" class="nav-phone">📞 (786) 793-4828</a>
+            </div>
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
+            <!-- Hamburger Button -->
+            <button class="hamburger-btn" id="hamburger-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <span class="hero-badge" data-i18n="hero.badge">MIAMI BASED. WORLD CLASS.</span>
+                <h1 class="hero-title"><span data-i18n="hero.title1">GLOBAL REACH.</span><br><span
+                        data-i18n="hero.title2">LOCAL</span> <span class="highlight"
+                        data-i18n="hero.title3">PRECISION.</span></h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">We don't just move freight. We engineer supply chain
+                    solutions with absolute
+                    perfection. Experience the future of logistics.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button hero-btn-primary" data-modal="quote" data-i18n="hero.btn.quote">Get a
+                        Quote</button>
+                    <button class="cta-button hero-btn-secondary" data-modal="carrier"
+                        data-i18n="hero.btn.carrier">Carrier Setup</button>
+                </div>
+            </div>
+            <!-- The Globe is in the background, but we can have a floating UI element here -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-i18n="hero.stat1.num">99.8%</span>
+                    <span class="stat-label" data-i18n="hero.stat1.label">On-Time Delivery</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-i18n="hero.stat2.num">24/7</span>
+                    <span class="stat-label" data-i18n="hero.stat2.label">Live Tracking</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+            <div class="trust-item">SMARTWAY PARTNER</div>
+            <div class="trust-item">EPA CERTIFIED</div>
+            <div class="trust-item">TIA MEMBER</div>
+            <div class="trust-item">FMCSA LICENSED</div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="section-header">
+                <h2 class="section-title">Our Solutions</h2>
+                <p class="section-desc">Comprehensive freight services tailored to your supply chain.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Neon Truck SVG -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h3>Full Truckload</h3>
+                    <p>Dry Van, Reefer, and Flatbed capacity available across North America.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Neon Box SVG -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>LTL Consolidation</h3>
+                    <p>Cost-efficient solutions for smaller shipments with premium handling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- Neon Lightning SVG -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Expedited</h3>
+                    <p>Team drivers and sprinter vans for time-critical deliveries.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="section tech-section" id="tech">
+            <div class="tech-content">
+                <h2 class="section-title">Visibility is Power</h2>
+                <p>Our proprietary tracking technology gives you real-time insights into every mile. Integration with
+                    EDI and API available.</p>
+                <ul class="tech-list">
+                    <li class="tech-item"><span class="check-icon">✓</span> Real-Time GPS Tracking</li>
+                    <li class="tech-item"><span class="check-icon">✓</span> Automated Status Updates</li>
+                    <li class="tech-item"><span class="check-icon">✓</span> Digital POD Retrieval</li>
+                </ul>
+                <button class="cta-button" data-modal="tech" data-i18n="tech.btn">Explore Tech</button>
+            </div>
+            <div class="tech-visual">
+                <!-- Glass Card representing the Tech Interface -->
+                <div class="glass-interface">
+                    <div class="interface-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                        <div class="header-title">LIVE_TRACKING_V2.exe</div>
+                    </div>
+                    <div class="interface-body">
+                        <div class="hud-grid">
+                            <div class="hud-item">
+                                <span class="hud-label">LOAD ID</span>
+                                <span class="hud-value">#8921</span>
+                            </div>
+                            <div class="hud-item">
+                                <span class="hud-label">STATUS</span>
+                                <span class="hud-value status-active">IN TRANSIT</span>
+                            </div>
+                            <div class="hud-item">
+                                <span class="hud-label">ETA</span>
+                                <span class="hud-value">04:20 PM</span>
+                            </div>
+                            <div class="hud-item">
+                                <span class="hud-label">SPEED</span>
+                                <span class="hud-value">65 MPH</span>
+                            </div>
+                        </div>
+                        <div class="tracking-map-placeholder">
+                            <!-- WebGL Globe visible through here -->
+                            <div class="scan-line"></div>
+                            <div class="map-grid-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section class="section safety-section" id="safety">
+            <div class="safety-card">
+                <h2>Safety First. Always.</h2>
+                <p>We rigorously vet every carrier in our network. Your cargo is protected by the highest compliance
+                    standards in the industry.</p>
+                <div class="safety-badges">
+                    <div class="safety-badge-item">
+                        <span>🛡️</span> $100k Cargo Insurance
+                    </div>
+                    <div class="safety-badge-item">
+                        <span>📋</span> 98% Compliance Score
+                    </div>
+                    <div class="safety-badge-item">
+                        <span>⭐</span> Top Rated Carrier
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <section class="section contact-section" id="contact">
+            <div class="cta-container">
+                <h2>Start Moving With Calzadilla</h2>
+                <p>Miami's most trusted logistics partner.</p>
+                <h3 class="phone-display">786 793 4828</h3>
+                <form class="neon-form">
+                    <input type="email" placeholder="Enter your email" class="neon-input">
+                    <button type="submit" class="cta-button submit-btn">Get Started</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Calzadilla Logistics LLC</h4>
+                    <p>Miami, FL</p>
+                </div>
+                <div class="footer-col">
+                    <a href="#">Shippers</a>
+                    <a href="#">Carriers</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <p>&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- MODALS -->
+    <!-- Quote Modal -->
+    <div class="modal-overlay" id="quote-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 data-i18n="modal.quote.title">Request a Quote</h2>
+            <form id="quote-form" class="modal-form">
+                <input type="text" placeholder="Full Name" data-i18n="modal.quote.name" required>
+                <input type="email" placeholder="Email Address" data-i18n="modal.quote.email" required>
+                <input type="tel" placeholder="Phone Number" data-i18n="modal.quote.phone" required>
+                <select required>
+                    <option value="">Service Type</option>
+                    <option value="ftl">Full Truckload</option>
+                    <option value="ltl">LTL</option>
+                    <option value="exp">Expedited</option>
+                </select>
+                <input type="text" placeholder="Origin City" data-i18n="modal.quote.origin" required>
+                <input type="text" placeholder="Destination City" data-i18n="modal.quote.destination" required>
+                <textarea placeholder="Shipment Details" data-i18n="modal.quote.details" rows="4"></textarea>
+                <button type="submit" class="cta-button" data-i18n="modal.quote.submit">Submit Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Carrier Modal -->
+    <div class="modal-overlay" id="carrier-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 data-i18n="modal.carrier.title">Carrier Setup</h2>
+            <form id="carrier-form" class="modal-form">
+                <input type="text" placeholder="Company Name" data-i18n="modal.carrier.company" required>
+                <input type="text" placeholder="MC Number" data-i18n="modal.carrier.mc" required>
+                <input type="text" placeholder="DOT Number" data-i18n="modal.carrier.dot" required>
+                <input type="email" placeholder="Contact Email" data-i18n="modal.carrier.email" required>
+                <input type="tel" placeholder="Phone Number" data-i18n="modal.carrier.phone" required>
+                <input type="number" placeholder="Fleet Size" data-i18n="modal.carrier.fleet" required>
+                <button type="submit" class="cta-button" data-i18n="modal.carrier.submit">Apply as Carrier</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tech Demo Modal -->
+    <div class="modal-overlay" id="tech-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 data-i18n="modal.tech.title">Our Technology Platform</h2>
+            <div class="tech-modal-content">
+                <ul class="tech-features-list">
+                    <li data-i18n="modal.tech.feature1">✓ Real-time GPS tracking on all shipments</li>
+                    <li data-i18n="modal.tech.feature2">✓ Automated ETA updates via SMS/Email</li>
+                    <li data-i18n="modal.tech.feature3">✓ Digital proof of delivery with photos</li>
+                    <li data-i18n="modal.tech.feature4">✓ EDI & API integration available</li>
+                    <li data-i18n="modal.tech.feature5">✓ Custom reporting and analytics</li>
+                </ul>
+                <button class="cta-button" data-modal="quote" data-i18n="modal.tech.cta">Schedule a Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
+    <script src="modals.js"></script>
+    <script type="module" src="webgl_scene.js"></script>
+    <script src="mobile_menu.js"></script>
+    <script src="interactions.js"></script>
+</body>
+
+</html>
